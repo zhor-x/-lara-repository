@@ -1,0 +1,58 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyRepositoryInterfaceNamespace;
+use DummyModelClass;
+
+class DummyRepositoryClass implements DummyRepositoryInterface
+{
+    private $DummyVariable;
+
+    public function __construct(DummyModel $DummyVariable)
+    {
+        $this->DummyVariable = $DummyVariable;
+    }
+
+    public function index()
+    {
+        return $this->DummyVariable->get();
+    }
+
+    public function store($data)
+    {
+        $DummyVariable = $this->DummyVariable->create($data);
+        return $DummyVariable->id;
+    }
+
+    public function show($id)
+    {
+        return $this->DummyVariable->find($id);
+    }
+
+    public function where($data, $orderBy = 'id', $position = 'asc', $groupBy = null, $count = 'get')
+    {
+        $DummyVariable = $this->DummyVariable->where($data)->orderBy($orderBy, $position);
+        if ($groupBy) {
+            DummyVariable->groupBy($groupBy);
+        }
+        if ($count == 'get') {
+            return DummyVariable->get();
+        }
+        return DummyVariable->first();
+    }
+
+    public function update($data, $id):void
+    {
+        $DummyVariable = $this->DummyVariable->find($id);
+        $DummyVariable->fill($data);
+        $DummyVariable->save();
+     }
+
+
+    public function destroy($id): void
+    {
+        $DummyVariable = $this->DummyVariable->find($id);
+        $DummyVariable->delete();
+    }
+}

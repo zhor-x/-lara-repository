@@ -1,0 +1,20 @@
+<?php
+
+namespace DummyNamespace;
+
+
+
+interface DummyItemRepositoryInterface
+{
+    public function index();
+
+    public function store($data);
+
+    public function show($id);
+
+    public function where($data);
+
+    public function update($data, $id);
+
+    public function destroy($id);
+}
