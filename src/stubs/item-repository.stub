@@ -34,12 +34,12 @@ class DummyRepositoryClass implements DummyRepositoryInterface
     {
         $DummyVariable = $this->DummyVariable->where($data)->orderBy($orderBy, $position);
         if ($groupBy) {
-            DummyVariable->groupBy($groupBy);
+            $DummyVariable->groupBy($groupBy);
         }
         if ($count == 'get') {
-            return DummyVariable->get();
+            return $DummyVariable->get();
         }
-        return DummyVariable->first();
+        return $DummyVariable->first();
     }
 
     public function update($data, $id):void
