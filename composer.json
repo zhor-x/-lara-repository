@@ -1,0 +1,23 @@
+{
+  "name": "zhor-x/repository",
+  "description": "Auto-generated Interface and Repository and Model files",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ZhorX",
+      "email": "zhora.ghazaryan1992@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+       "ZhorX\\Laravel\\Repo\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ZhorX\\Laravel\\Repo\\RepositoryServiceProvider"
+      ]
+    }
+  }
+}
